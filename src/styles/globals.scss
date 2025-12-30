@@ -1,1 +1,17 @@
 @use "helpers" as *;
+
+.section-spacer {
+  --desktop: 0;
+  --tablet: 0;
+  --mobile: 0;
+
+  height: var(--desktop);
+
+  @include medium {
+    height: var(--tablet);
+  }
+
+  @include x-small {
+    height: var(--mobile);
+  }
+}
