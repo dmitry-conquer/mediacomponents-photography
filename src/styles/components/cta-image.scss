@@ -1,0 +1,79 @@
+@use "../helpers" as *;
+
+.cta-image {
+  padding-block: fluid(40, 124);
+  position: relative;
+
+  &__container {
+    max-width: rem(1070);
+    margin-inline: auto;
+    padding-inline: rem(20);
+  }
+
+  &__content {
+    z-index: 2;
+    position: relative;
+  }
+
+  &__title {
+    color: #020b2c;
+    text-align: center;
+    font-size: fluid(34, 40);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: fluid(24, 40);
+  }
+
+  &__text {
+    margin-bottom: rem(24);
+    text-align: center;
+
+    * {
+      color: #020b2c;
+      font-size: fluid(20, 24);
+      line-height: 1.5;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    color: #fff;
+    text-align: center;
+    font-size: rem(16);
+    line-height: 1.4;
+    text-transform: uppercase;
+    border-radius: 40px;
+    background-color: #ec1721;
+    padding: rem(12) rem(24);
+    max-width: max-content;
+    margin-inline: auto;
+    border: 1px solid transparent;
+    transition: all 0.3s ease !important;
+
+    @include hover {
+      background-color: transparent;
+      border-color: #ec1721;
+      color: #ec1721;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media (max-width: 120rem) {
+      right: -10%;
+    }
+
+    @media (max-width: 101.25rem) {
+      display: none;
+    }
+  }
+}
