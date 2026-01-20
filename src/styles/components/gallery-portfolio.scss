@@ -18,6 +18,45 @@
     margin-bottom: rem(40);
   }
 
+  &__filters {
+    display: flex;
+    justify-content: center;
+    gap: fluid(10, 20);
+    margin-bottom: rem(40);
+    flex-wrap: wrap;
+  }
+
+  &__filter {
+    color: #020b2c;
+    text-align: center;
+    font-size: rem(16);
+    line-height: 1.4;
+    text-transform: uppercase;
+    border-radius: 40px;
+    background-color: transparent;
+    padding: rem(12) rem(24);
+    border: 1px solid #020b2c;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    @include hover {
+      background-color: #020b2c;
+      color: #fff;
+    }
+
+    &--active {
+      background-color: #ec1721;
+      border-color: #ec1721;
+      color: #fff;
+
+      @include hover {
+        background-color: #ec1721;
+        border-color: #ec1721;
+        color: #fff;
+      }
+    }
+  }
+
   &__items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(rem(361), 1fr));
@@ -32,6 +71,12 @@
 
   &__item {
     overflow: hidden;
+    // JavaScript повністю контролює відображення через фільтрацію
+    display: none;
+
+    &--visible {
+      display: revert !important;
+    }
 
     @include hover {
       .gallery-portfolio__item-image {
@@ -45,6 +90,7 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease !important;
+    object-position: top;
   }
   &__footer {
     display: flex;
