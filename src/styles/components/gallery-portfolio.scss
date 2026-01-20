@@ -119,3 +119,9 @@
     }
   }
 }
+
+// Приховуємо стрілки навігації в GLightbox
+.gprev,
+.gnext {
+  display: none !important;
+}
